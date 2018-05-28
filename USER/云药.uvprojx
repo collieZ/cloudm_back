@@ -322,7 +322,7 @@
             <wLevel>0</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
-            <uC99>0</uC99>
+            <uC99>1</uC99>
             <useXO>0</useXO>
             <v6Lang>1</v6Lang>
             <v6LangP>1</v6LangP>
@@ -335,7 +335,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\STM32F10x_FWLib\inc;..\CORE;..\HARDWARE\TIMER;..\HARDWARE\DHT11;..\HARDWARE\ADC;..\HARDWARE\MQ_2;..\HARDWARE\USART3</IncludePath>
+              <IncludePath>..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\STM32F10x_FWLib\inc;..\CORE;..\HARDWARE\TIMER;..\HARDWARE\DHT11;..\HARDWARE\ADC;..\HARDWARE\MQ_2;..\HARDWARE\USART3;..\HARDWARE\Gizwits;..\HARDWARE\LED;..\HARDWARE\LED;..\commmand包\MCU_Common_source;..\HARDWARE\KEY;..\commmand包\MCU_Common_source\Utils;..\commmand包\Utils;..\commmand包\MCU_Common_source\Gizwits</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -413,6 +413,16 @@
               <FileName>MQ_2.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\MQ_2\MQ_2.c</FilePath>
+            </File>
+            <File>
+              <FileName>led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\LED\led.c</FilePath>
+            </File>
+            <File>
+              <FileName>key.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\KEY\key.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -513,6 +523,41 @@
               <FileName>usart3.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\USART3\usart3.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Gizwits</GroupName>
+          <Files>
+            <File>
+              <FileName>gizwits_product.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\Gizwits\gizwits_product.c</FilePath>
+            </File>
+            <File>
+              <FileName>gizwits_protocol.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\Gizwits\gizwits_protocol.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Command</GroupName>
+          <Files>
+            <File>
+              <FileName>common.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\commmand包\Utils\common.c</FilePath>
+            </File>
+            <File>
+              <FileName>dataPointTools.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\commmand包\Utils\dataPointTools.c</FilePath>
+            </File>
+            <File>
+              <FileName>ringbuffer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\commmand包\Utils\ringbuffer.c</FilePath>
             </File>
           </Files>
         </Group>

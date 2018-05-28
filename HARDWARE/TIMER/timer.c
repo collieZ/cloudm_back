@@ -3,6 +3,7 @@
 #include "MQ_2.h"
 #include "usart.h"
 #include "usart3.h"
+#include "gizwits_product.h"
 //********************************************************************************
 
 
@@ -129,13 +130,23 @@ void TIM7_Int_Init(u16 arr,u16 psc)
 	
 	
 	NVIC_InitStructure.NVIC_IRQChannel = TIM7_IRQn;
-	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=1 ;//抢占优先级0
-	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 2;		//子优先级2
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=0 ;//抢占优先级0
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;		//子优先级2
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;			//IRQ通道使能
 	NVIC_Init(&NVIC_InitStructure);	//根据指定的参数初始化VIC寄存器
 	
 	TIM_Cmd(TIM7,ENABLE);//开启定时器7
 	TIM7->CNT=0;
+}
+
+//定时器7中断服务程序
+void TIM7_IRQHandler(void)   //TIM7中断
+{
+	if (TIM_GetITStatus(TIM7, TIM_IT_Update) != RESET)  //检查TIM3更新中断发生与否
+	{
+		TIM_ClearITPendingBit(TIM7, TIM_IT_Update  );  //清除TIMx更新中断标志 
+		gizTimerMs();
+	}
 }
 
 

@@ -24,7 +24,7 @@ __IO uint8_t ReceiveState=0;
 
 void USART3_IRQHandler(void)
 {		
-		uint8_t Clear;
+		uint8_t Clear = Clear;
 		if(USART_GetITStatus(USART3, USART_IT_RXNE) != RESET)
 		{
 			aRxBuffer[rxCounter++]=USART3->DR;
